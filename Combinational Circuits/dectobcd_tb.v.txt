@@ -1,0 +1,27 @@
+module dectobcd_tb; 
+
+reg [9:0]x; 
+wire [3:0]a; 
+
+dectobcd uut(a,x); 
+initial 
+ begin 
+  $monitor("%b %b",x,a); 
+  x=10'b0010000000; 
+  #5; 
+  x=10'b0000000100; 
+  #5; 
+  x=10'b1000000000; 
+  #5;
+  x=10'b0000001000; 
+  #5;
+ end
+
+initial begin 
+$dumpfile("decbcd.vcd"); 
+$dumpvars; 
+#50 
+$finish; 
+end
+
+endmodule
