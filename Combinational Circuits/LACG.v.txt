@@ -1,4 +1,4 @@
-module CLA_Adder(a,b,cin,sum,cout);
+module LACG(a,b,cin,sum,cout);
 input[3:0] a,b;
 input cin;
 output [3:0] sum;
@@ -22,4 +22,4 @@ sum[1]=p1^c1,
 sum[2]=p2^c2,
 sum[3]=p3^c3;
 assign cout=c4;
-endmodul
+endmodule

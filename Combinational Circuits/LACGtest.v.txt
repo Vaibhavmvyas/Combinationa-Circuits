@@ -1,4 +1,4 @@
-module TestModule;
+module LACGtest;
 // Inputs
 reg [3:0] a;
 reg [3:0] b;
@@ -9,9 +9,12 @@ wire [3:0] sum;
 wire cout;
 
 // Instantiate the Unit Under Test (UUT)
-CLA_Adder uut (.a(a),.b(b),.cin(cin),.sum(sum),.cout(cout));
+LACG uut (.a(a),.b(b),.cin(cin),.sum(sum),.cout(cout));
 initial begin
 // Initialize Inputs
+$dumpfile("LACG.vcd");
+$dumpvars(0,LACGtest);
+$monitor ($time, "in1=%d, in2=%d, cin=%b, sum=%d, cout=%b", a,b,cin,sum,cout); 
 a = 0;
 b = 0;
 cin = 0;
